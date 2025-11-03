@@ -5,6 +5,7 @@
   font-family: "Poppins", sans-serif;
 }
 
+/* Background */
 body {
   background: linear-gradient(135deg, #0d1b2a, #1b263b);
   color: white;
@@ -23,6 +24,7 @@ body {
   transition: 0.4s ease;
 }
 
+/* Sidebar Show in Mobile */
 .sidebar.show {
   left: 0;
 }
@@ -41,7 +43,7 @@ body {
   transform: translateX(4px);
 }
 
-/* Mobile Menu */
+/* Menu Button */
 .menu-btn {
   display: none;
   position: fixed;
@@ -56,11 +58,32 @@ body {
   cursor: pointer;
 }
 
-/* Content */
+/* Content Area */
 .content {
   margin-left: 260px;
   width: calc(100% - 260px);
   padding: 2rem;
+}
+
+/* Modern Bold Headings */
+h2, h3, h4 {
+  font-weight: 800;
+  color: #00eaff;
+  letter-spacing: 1px;
+  text-shadow: 0 0 12px rgba(0, 255, 255, 0.5);
+  position: relative;
+}
+
+/* Underline Glow */
+h2::after, h3::after {
+  content: "";
+  width: 55px;
+  height: 3.5px;
+  background: #00eaff;
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  border-radius: 2px;
 }
 
 /* Cards */
@@ -92,7 +115,7 @@ body {
   border-radius: 18px;
 }
 
-/* Form Inputs */
+/* Inputs */
 .form-box input {
   width: 100%;
   padding: 10px;
@@ -100,26 +123,32 @@ body {
   border: none;
   border-radius: 8px;
   outline: none;
+  background: rgba(255,255,255,0.2);
+  color: #fff;
 }
 
+.form-box input::placeholder {
+  color: #cfd8e3;
+}
+
+/* Button */
 .btn {
   width: 100%;
   padding: 12px;
   border: none;
-  background: #2563eb;
+  background: linear-gradient(90deg,#00c6ff,#00a2ff);
   color: #fff;
-  font-weight: 600;
+  font-weight: 700;
   border-radius: 10px;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .btn:hover {
-  background: #1e40af;
-  transform: scale(1.02);
+  transform: scale(1.04);
 }
 
-/* Transaction List */
+/* List */
 .list li {
   display: flex;
   justify-content: space-between;
@@ -142,6 +171,13 @@ body {
 
 .chart { flex: 1; }
 
+/* Remove animation unused */
+.fade-out {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: 0.3s;
+}
+
 /* Responsive */
 @media(max-width: 768px) {
   .content { margin-left: 0; width: 100%; }
@@ -149,9 +185,10 @@ body {
   .menu-btn { display: block; }
   .panel, .cards, .charts { flex-direction: column; }
 }
-.fade-out {
-  opacity: 0;
-  transform: translateX(-20px);
-  transition: 0.3s;
+/* Make Chart Legend Text Bold */
+.chartjs-legend li span {
+  font-weight: 700 !important;
 }
-
+.chartjs-legend li {
+  font-weight: 700 !important;
+}
