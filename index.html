@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MoneyWise | Expense Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2 class="logo">💰 MoneyWise</h2>
+    <ul>
+      <li class="active">Dashboard</li>
+    </ul>
+  </div>
+
+  <!-- Dashboard Content -->
+  <div class="content">
+
+    <!-- Top Summary Cards -->
+    <div class="cards">
+      <div class="card">
+        <h4>Total Balance</h4>
+        <h2 id="balance">₹0.00</h2>
+      </div>
+
+      <div class="card income-card">
+        <h4>Total Income</h4>
+        <h2 id="income">₹0.00</h2>
+      </div>
+
+      <div class="card expense-card">
+        <h4>Total Expense</h4>
+        <h2 id="expense">₹0.00</h2>
+      </div>
+    </div>
+
+    <!-- Form + Transaction List -->
+    <div class="panel">
+      <div class="form-box glass">
+        <h3>Add New Transaction</h3>
+        <form id="form">
+          <input type="text" id="text" placeholder="Enter description" required />
+          <input type="number" id="amount" placeholder="Amount ( + / - )" required />
+          <button type="submit" class="btn">Add Transaction</button>
+        </form>
+      </div>
+
+      <div class="list-box glass">
+        <h3>Recent Transactions</h3>
+        <ul id="transactions" class="list"></ul>
+      </div>
+    </div>
+
+    <!-- Charts Area -->
+    <div class="charts">
+      <div class="chart glass">
+        <h3>Category Spending</h3>
+        <canvas id="pieChart"></canvas>
+      </div>
+
+      <div class="chart glass">
+        <h3>Monthly Spending</h3>
+        <canvas id="barChart"></canvas>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
